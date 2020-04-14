@@ -1,14 +1,27 @@
-import React from "react";
-import "./App.css";
+import React, { Component } from "react";
+import { Link, Route } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <p>Coming soon... About Farah Makki</p>
-      </header>
-    </div>
-  );
+import CV from "./containers/CV";
+import asyncComponent from "./hoc/asyncComponent";
+
+const AsyncBlog = asyncComponent(() => {
+  return import("./containers/Blog.js");
+});
+
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <div>
+          <Link to="/">CV</Link> |<Link to="/blog">Blog</Link>
+        </div>
+        <div>
+          <Route path="/" exact component={CV} />
+          <Route path="/blog" component={AsyncBlog} />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;
