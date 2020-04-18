@@ -1,11 +1,15 @@
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+
 import React, { Component } from "react";
 import { Link, Route } from "react-router-dom";
 
 import CV from "./containers/CV";
+//import Blog from "./containers/Blog";
 import asyncComponent from "./hoc/asyncComponent";
 
 const AsyncBlog = asyncComponent(() => {
-  return import("./containers/Blog.js");
+  return import("./containers/Blog");
 });
 
 class App extends Component {
