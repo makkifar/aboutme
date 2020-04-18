@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.tsx",
   "scripts": {
-    "lint": "eslint --ignore-path .gitignore .",
+    "lint": "eslint --max-warnings 0 --ignore-path .gitignore .",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server",
     "build": "webpack --config webpack.config.prod.js"
@@ -43,6 +43,8 @@
     "eslint-plugin-standard": "^4.0.1",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.1.5",
     "postcss-loader": "^3.0.0",
     "prettier": "^1.19.1",
     "source-map-loader": "^0.2.4",
@@ -61,5 +63,16 @@
     "react-dom": "^16.10.2",
     "react-router-dom": "^5.1.2",
     "regenerator-runtime": "^0.13.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "./**/*.{js,jsx,ts,tsx}": [
+      "yarn lint",
+      "git add"
+    ]
   }
 }
