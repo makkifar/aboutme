@@ -1,32 +1,32 @@
-import React from "react";
+import React from "react"
 
 type StateProps = {
-  Component: any;
-};
+  Component: any
+}
 
 const asyncComponent = (importComponent: any): any => {
-  return class extends React.Component<{}, StateProps> {
+  return class asyncComponent extends React.Component<{}, StateProps> {
     constructor(props: any) {
-      super(props);
+      super(props)
 
       this.state = {
-        Component: null,
-      };
+        Component: null
+      }
     }
 
     async componentDidMount() {
-      const { default: Component } = await importComponent();
+      const { default: Component } = await importComponent()
       this.setState({
-        Component: Component,
-      });
+        Component: Component
+      })
     }
 
     render() {
-      const C = this.state.Component;
+      const C = this.state.Component
 
-      return C ? <C {...this.props} /> : null;
+      return C ? <C {...this.props} /> : null
     }
-  };
-};
+  }
+}
 
-export default asyncComponent;
+export default asyncComponent

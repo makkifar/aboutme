@@ -1,16 +1,16 @@
-import "core-js/stable";
-import "regenerator-runtime/runtime";
+import "core-js/stable"
+import "regenerator-runtime/runtime"
 
-import React, { Component } from "react";
-import { Link, Route } from "react-router-dom";
+import React, { Component } from "react"
+import { Link, Route } from "react-router-dom"
 
-import CV from "./containers/CV";
+import CV from "./containers/CV"
 //import Blog from "./containers/Blog";
-import asyncComponent from "./hoc/asyncComponent";
+import asyncComponent from "./hoc/asyncComponent"
 
 const AsyncBlog = asyncComponent(() => {
-  return import("./containers/Blog");
-});
+  return import("./containers/Blog")
+})
 
 class App extends Component {
   render() {
@@ -24,8 +24,8 @@ class App extends Component {
           <Route path="/blog" component={AsyncBlog} />
         </div>
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App

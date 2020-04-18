@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from "react"
 
 class CV extends Component {
   render() {
@@ -6,8 +6,8 @@ class CV extends Component {
       <div>
         <h1>CV</h1>
       </div>
-    );
+    )
   }
 }
 
-export default CV;
+export default CV
