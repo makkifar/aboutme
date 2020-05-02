@@ -10,5 +10,10 @@
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true
   },
-  "exclude": ["configs/node_modules", "node_modules", "dist"]
+  "exclude": [
+    "configs/node_modules",
+    "node_modules",
+    "dist",
+    "src/material-kit-ui-components"
+  ]
 }

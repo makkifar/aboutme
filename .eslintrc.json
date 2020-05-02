@@ -27,5 +27,9 @@
       "version": "detect"
     }
   },
-  "ignorePatterns": ["node_modules/", "src/components/", "src/assets"]
+  "ignorePatterns": [
+    "node_modules/",
+    "src/material-kit-ui-components/",
+    "src/assets"
+  ]
 }
