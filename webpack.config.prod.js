@@ -8,7 +8,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
-    publicPath: ''
+    publicPath: '/'
   },
   devtool: 'none',
   resolve: {
@@ -56,6 +56,14 @@ module.exports = {
       {
         test: /\.(png|jpe?g|gif)$/,
         loader: 'url-loader?limit=8000&name=images/[name].[ext]'
+      },
+      {
+        test: /\.(pdf)$/,
+        use: [
+          {
+            loader: 'file-loader&name=images/[name].[ext]'
+          }
+        ]
       }
     ]
   },
@@ -63,7 +71,8 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: __dirname + '/src/index.html',
       filename: 'index.html',
-      inject: 'body'
+      inject: 'body',
+      favicon: './src/assets/favicon/logo.png'
     })
   ]
 }

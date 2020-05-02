@@ -5,12 +5,12 @@ import React, { Component } from 'react'
 import { Route } from 'react-router-dom'
 
 import LandingPage from './containers/LandingPage'
+import './assets/css/material-kit-react.css'
+import asyncComponent from './hoc/asyncComponent'
 
-// import asyncComponent from './hoc/asyncComponent'
-
-// const AsyncBlog = asyncComponent(() => {
-//   return import('./containers/Blog')
-// })
+const AsyncBlogPage = asyncComponent(() => {
+  return import('./containers/BlogPage')
+})
 
 class App extends Component {
   render() {
@@ -18,6 +18,7 @@ class App extends Component {
       <div>
         <div>
           <Route path="/" exact component={LandingPage} />
+          <Route path="/blog" component={AsyncBlogPage} />
         </div>
       </div>
     )
