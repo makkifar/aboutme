@@ -61,7 +61,10 @@ module.exports = {
         test: /\.(pdf)$/,
         use: [
           {
-            loader: 'file-loader&name=images/[name].[ext]'
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]'
+            }
           }
         ]
       }
