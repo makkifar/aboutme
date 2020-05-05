@@ -4,7 +4,6 @@ import withStyles from '@material-ui/core/styles/withStyles'
 import { WithStyles } from '@material-ui/styles'
 
 import { BlogPost } from '../blog-post'
-
 import Parallax from '../../material-kit-ui-components/Parallax/Parallax'
 import profilePageStyle from '../../assets/jss/material-kit-react/views/profilePage'
 

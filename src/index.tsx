@@ -1,13 +1,17 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter } from 'react-router-dom'
+import { ApolloProvider } from 'react-apollo'
 
-import './index.css'
 import App from './App'
+import client from './utils/apolloClient'
+import './index.css'
 
 const app = (
   <BrowserRouter>
-    <App />
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
   </BrowserRouter>
 )
 

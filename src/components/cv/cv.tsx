@@ -1,5 +1,4 @@
 import React from 'react'
-import classNames from 'classnames'
 
 import Grid from '@material-ui/core/Grid'
 import { WithStyles } from '@material-ui/styles'
@@ -12,12 +11,6 @@ import Pdf from '../../assets/cv/cv.pdf'
 
 interface PersonalInfoProps extends WithStyles<typeof profilePageStyle> {}
 const CV = ({ classes }: PersonalInfoProps) => {
-  const imageClasses = classNames(
-    classes.imgRaised,
-    classes.imgRoundedCircle,
-    classes.imgFluid
-  )
-
   return (
     <>
       <Grid container justify="center">
