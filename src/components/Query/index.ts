@@ -1,13 +1,13 @@
 import { useQuery } from '@apollo/react-hooks'
 
 type QueryProps = {
-  id?: string
+  articleId?: string
   children: any
   query: any
 }
-const Query = ({ children, query, id }: QueryProps) => {
+const Query = ({ children, query, articleId }: QueryProps) => {
   const { data, loading, error } = useQuery(query, {
-    variables: { id: id }
+    variables: { articleId: articleId }
   })
 
   return data ? children({ data }) : null

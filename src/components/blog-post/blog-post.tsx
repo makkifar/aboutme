@@ -14,10 +14,9 @@ import profilePageStyle from '../../assets/jss/material-kit-react/views/profileP
 type Article = {
   data: {
     article: {
-      id: string
+      articleId: string
       title: string
       content: string
-      published_at: string
     }
   }
 }
@@ -26,7 +25,7 @@ const BlogPost = ({ classes }: BlogPostProps) => {
   const { id } = useParams()
 
   return (
-    <Query query={ARTICLE_QUERY} id={id}>
+    <Query query={ARTICLE_QUERY} articleId={id}>
       {({ data: { article } }: Article) => {
         return (
           <div className={classNames(classes.main, classes.mainRaised)}>

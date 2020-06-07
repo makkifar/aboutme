@@ -24,7 +24,7 @@ const useStyles = makeStyles((theme: Theme) =>
 )
 
 type Article = {
-  id: number
+  articleId: string
   title: string
   content: string
 }
@@ -41,8 +41,11 @@ const BlogPostTeasers = ({}) => {
       <Query query={ARTICLES_QUERY}>
         {({ data: { articles } }: Articles) => {
           return articles.map((article, key) => (
-            <Grid key={article.id} item xs={4} className="clickable">
-              <Link key={article.id} to={`/article/${article.id}`}>
+            <Grid key={article.articleId} item xs={4} className="clickable">
+              <Link
+                key={article.articleId}
+                to={`/article/${article.articleId}`}
+              >
                 <Paper className={classes.paper}>
                   <Grid container wrap="nowrap" spacing={2}>
                     <Grid item xs>
