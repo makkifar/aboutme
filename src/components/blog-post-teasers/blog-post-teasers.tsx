@@ -41,7 +41,7 @@ const BlogPostTeasers = ({}) => {
       <Query query={ARTICLES_QUERY}>
         {({ data: { articles } }: Articles) => {
           return articles.map((article, key) => (
-            <Grid key={article.articleId} item xs={4} className="clickable">
+            <Grid key={article.articleId} item xs={6} className="clickable">
               <Link
                 key={article.articleId}
                 to={`/article/${article.articleId}`}
