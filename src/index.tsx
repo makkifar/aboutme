@@ -17,7 +17,6 @@ const app = (
 )
 
 const history = createBrowserHistory()
-
 const path = (/#!(\/.*)$/.exec(location.hash) || [])[1]
 if (path) {
   history.replace(path)
