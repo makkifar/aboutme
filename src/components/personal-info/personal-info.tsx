@@ -31,7 +31,13 @@ const PersonalInfo = ({ classes }: PersonalInfoProps) => {
         </Grid>
       </Grid>
       <div className={classes.description}>
-        <p>Download my cv or check out my blog posts to know more!</p>
+        <p>
+          Visit my{' '}
+          <a href="https://www.linkedin.com/in/farah-makki-7ba03665">
+            LinkedIn Profile
+          </a>{' '}
+          or check out my blog posts below to know more!
+        </p>
       </div>
     </>
   )

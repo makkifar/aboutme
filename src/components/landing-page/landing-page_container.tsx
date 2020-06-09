@@ -7,7 +7,6 @@ import Grid from '@material-ui/core/Grid'
 
 import { BlogPostTeasers } from '../blog-post-teasers'
 import { PersonalInfo } from '../personal-info'
-import { CV } from '../cv'
 import Parallax from '../../material-kit-ui-components/Parallax/Parallax'
 import profilePageStyle from '../../assets/jss/material-kit-react/views/profilePage'
 
@@ -27,8 +26,6 @@ class LandingPage extends React.Component<LandingPageProps> {
         <div className={classNames(classes.main, classes.mainRaised)}>
           <div className={classes.container}>
             <PersonalInfo classes={classes} />
-
-            <CV classes={classes} />
 
             <Grid container spacing={1}>
               <Grid container item xs={12} spacing={3}>
